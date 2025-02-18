@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# Iris-Segmentation
-=======
+
 # Iris-Segmentation
 Iris based security system using techniques of iris segmentation by Canny edge detection and Hough transformation implemented in OpenCV Python.
 
