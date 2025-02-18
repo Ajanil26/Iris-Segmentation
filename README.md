@@ -1,5 +1,5 @@
-
 # Iris-Segmentation
+
 Iris based security system using techniques of iris segmentation by Canny edge detection and Hough transformation implemented in OpenCV Python.
 
 Iris segmentation is the first step and also the key step of the whole iris recognition. Its
@@ -13,7 +13,7 @@ If the iris regions were not correctly segmented, there would possibly exist fou
 noises in segmented iris regions: eyelashes, eyelids, reflections and pupil, which will result in
 poor recognition performance.
 
-##Methodology
+## Methodology
 
 In this proposed method for performing iris segmentation we use Hough Transform, and
 Canny Edge Detection techniques. The first is a curve fitting technique and the second is a
@@ -25,7 +25,7 @@ order to perform Hough transform we need to perform edge extraction because Houg
 transforms work only on edge extracted images. In order to perform Edge extraction we shall
 use canny edge detector algorithm.
 
-Canny Edge Detector Algorithm:
+### Canny Edge Detector Algorithm:
 
 1. Removing noise using a 5x5 gaussian filter with standard deviation 1.4.
 
@@ -37,33 +37,33 @@ used.
 4. Non maximum suppression- in this if a pixel is not a maximum it is suppressed. The
 following 4 criteria are checked over each pixel to determine if that pixel is maximum or not:
 
-• 22.5 to 67.5 degrees: If the gradient orientation is in this range means the edge lies
-from the top right corner to bottom left
+   - 22.5 to 67.5 degrees: If the gradient orientation is in this range means the edge lies
+     from the top right corner to bottom left
 
-• 67.5 to 112.5 degrees: The gradient is from top to bottom. This means the edge is
-from left to right. So you check gradient magnitudes against the pixels right above
-and below.
+   - 67.5 to 112.5 degrees: The gradient is from top to bottom. This means the edge is
+     from left to right. So you check gradient magnitudes against the pixels right above
+     and below.
 
-• 112.5 to 157.5 degrees: The gradient is the other diagonal.
+   - 112.5 to 157.5 degrees: The gradient is the other diagonal.
 
-• 0-22.5 or 157.5-180 degrees: The gradient is horizontal. So the edge is vertical. So
-you check the pixels to the left and right.
+   - 0-22.5 or 157.5-180 degrees: The gradient is horizontal. So the edge is vertical. So
+     you check the pixels to the left and right.
 
 5. Thresholding with hysteresis: in this we check if the current pixel is an edge or not, if not
-check the next pixel. If it is an edge we check the two pixels in the direction of the edge if
-either of them
+   check the next pixel. If it is an edge we check the two pixels in the direction of the edge if
+   either of them
 
-• Have the direction in the same bin as the central pixel
+   - Have the direction in the same bin as the central pixel
 
-• Gradient magnitude is greater than the lower threshold
+   - Gradient magnitude is greater than the lower threshold
 
-• They are the maximum compared to their neighbours (non-maximum suppression for
-these pixels), then you can mark these pixels as an edge pixel
+   - They are the maximum compared to their neighbours (non-maximum suppression for
+     these pixels), then you can mark these pixels as an edge pixel
 
-• Loop until there are no changes in the image Once the image stops changing, you've
-got your canny edges 
+   - Loop until there are no changes in the image Once the image stops changing, you've
+     got your canny edges 
 
-After determining the edges, location of the iris is found using Hough transform.The
+After determining the edges, location of the iris is found using Hough transform. The
 algorithm of Hough transform is as follows:
 
 1. Initialize pupil radius and iris radius the given database.
@@ -93,5 +93,11 @@ granted.
 
 Match factor can be calculated as Match factor = (matched_data/total_data)*100
 
+## Running Guide
 
->>>>>>> ef69be8 (Create README.md)
+To run the Iris Segmentation project, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Ajanil26/Iris-Segmentation.git
+   cd Iris-Segmentation
